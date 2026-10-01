@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nithya's Portfolio
 
-## Getting Started
+Next.js + TypeScript + Tailwind + Framer Motion. Inspired by the structure of
+[Swarnesh Jha's portfolio](https://swarnesh-portfolio-website.vercel.app/) (journey hero,
+project cards with metrics, experience timeline, frameworks section) but with its own content
+and visual identity.
 
-First, run the development server:
+## Run it locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where to edit things
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Almost everything you'd want to change lives in one file:
 
-## Learn More
+- **`src/data/content.ts`** — your name, tagline, journey milestones, projects, experience,
+  education, and frameworks. Edit this to update the site without touching any component.
 
-To learn more about Next.js, take a look at the following resources:
+A few things in there are marked `// EDIT ME` because I didn't have the real info:
+- Exact years at Christ University (I guessed 2017–2021, confirm or fix)
+- Links for the ESG Survey Pipeline project (code repo, live demo) once you deploy it
+- The "In Practice" examples under Frameworks — I wrote plausible ones from what I know of your
+  work, but verify each one is actually true before this goes live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding a new project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add an entry to the `projects` array in `src/data/content.ts`. If it needs its own case-study
+page, copy `src/app/projects/esg-survey-pipeline/page.tsx` to a new folder under
+`src/app/projects/` and link it via `storyHref`.
 
-## Deploy on Vercel
+## Deploying
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This is a standard Next.js app, so Vercel is the easiest path:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npx vercel
+```
+
+Or connect the GitHub repo to Vercel for push-to-deploy.
