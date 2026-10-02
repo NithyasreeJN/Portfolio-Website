@@ -20,7 +20,7 @@ export default function Frameworks() {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="rounded-2xl border border-border bg-background p-6"
             >
-              <span className="font-display text-sm text-terracotta">{item.number}</span>
+              <span className="font-display text-sm text-accent">{item.number}</span>
               <h3 className="mt-2 font-display text-lg font-medium">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
             </motion.div>

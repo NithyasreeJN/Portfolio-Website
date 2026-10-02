@@ -1,7 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Journey from "@/components/Journey";
-import Marquee from "@/components/Marquee";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Frameworks from "@/components/Frameworks";
@@ -15,7 +14,6 @@ export default function Home() {
       <main className="flex-1">
         <Journey />
         <Hero />
-        <Marquee />
         <Projects />
         <Experience />
         <Frameworks />

@@ -20,7 +20,7 @@ export default function EsgCaseStudy() {
             ESG Survey Pipeline: Two Ways to Solve the Same Problem
           </h1>
 
-          <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-terracotta">
+          <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-accent">
             Sustainability Problems Reimagined
           </p>
 

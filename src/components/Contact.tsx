@@ -12,7 +12,7 @@ export default function Contact() {
       <div className="mt-8 flex flex-wrap gap-4">
         <a
           href={`mailto:${profile.email}`}
-          className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+          className="rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-80"
         >
           Email Me
         </a>
@@ -20,7 +20,7 @@ export default function Contact() {
           href={profile.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+          className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
         >
           LinkedIn
         </a>
@@ -28,7 +28,7 @@ export default function Contact() {
           href={profile.resumeHref}
           target="_blank"
           rel="noreferrer"
-          className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+          className="rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-foreground"
         >
           Resume
         </a>

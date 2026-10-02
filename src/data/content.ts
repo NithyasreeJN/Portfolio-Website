@@ -22,17 +22,6 @@ export const journey = [
   { place: "Industry", label: "Solenis LLC", sub: "Sustainability Reporting Intern", years: "2026" },
 ];
 
-export const marqueeTags = [
-  "STRATEGY & OPS",
-  "AI-ACCELERATED BUILDING",
-  "ESG & SUSTAINABILITY",
-  "DATA & ANALYTICS",
-  "GO-TO-MARKET",
-  "PROCESS DESIGN",
-  "STORYTELLING",
-  "BUSINESS ANALYTICS",
-];
-
 export const categories = [
   "Sustainability Problems Reimagined",
   "Workflow Automation",
@@ -47,8 +36,10 @@ export type Project = {
   category: Category;
   tags: string[];
   title: string;
-  summary: string;
-  metrics: string[];
+  goal: string;
+  approach: string; // the framework or judgment call applied, not just the tech
+  solution: string;
+  impact: string[];
   storyHref?: string; // case-study page within this site
   codeHref?: string; // EDIT ME: add GitHub link once public
   appHref?: string; // EDIT ME: add live demo link once deployed
@@ -59,11 +50,14 @@ export const projects: Project[] = [
   {
     slug: "esg-survey-pipeline",
     category: "Sustainability Problems Reimagined",
-    tags: ["ESG", "NEXT.JS", "SUPABASE", "POWER BI (REAL TRACK)"],
+    tags: ["ESG", "Next.js", "Supabase", "Power BI (real track)"],
     title: "ESG Survey Pipeline: Two Ways to Solve the Same Problem",
-    summary:
-      "My manager's ask was simply \"improve this survey\": I could have patched the existing email-and-spreadsheet process and called it done. Instead I proposed something nobody asked for: a centralized database feeding live Power BI dashboards, replacing a process that couldn't be benchmarked across sites in real time. I designed and manually built that no-code pipeline for a 70+ site global rollout: Microsoft Forms to Power Automate to SharePoint Lists, visualized in a six-page Power BI suite. Here, I rebuilt the same workflow logic as a lightweight AI-accelerated web app in an afternoon, a 10-question representative demo, to show I can tell the difference between a problem that needs governed no-code infrastructure and one that needs a fast disposable prototype, and build either one myself.",
-    metrics: ["85%+ On-Time Submission vs ~60% Prior Cycle", "121 Questions Across 70+ Sites (Real Track)"],
+    goal: "My manager's ask was simply \"improve this survey.\" I reframed it: give leadership real-time visibility into ESG compliance across every site, not just a tidier spreadsheet.",
+    approach:
+      "No-code vs. build judgment. A governed 70+ site rollout with non-technical maintainers needs enterprise infrastructure that fits existing IT governance, not a custom app. I proposed a centralized database feeding live dashboards, a decision nobody asked for, and built it myself.",
+    solution:
+      "Designed and manually built a no-code pipeline (Microsoft Forms to Power Automate to SharePoint Lists) visualized in a six-page Power BI suite, 121 questions across 3 parts. Rebuilt the same workflow logic here as a 10-question AI-accelerated demo in an afternoon, to show both the governed build and the fast prototype.",
+    impact: ["85%+ on-time submission, up from ~60% the prior cycle", "121 questions standardized across 70+ sites"],
     storyHref: "/projects/esg-survey-pipeline",
     codeHref: "https://github.com/NithyasreeJN/esg-survey-pipeline",
     appHref: "https://esg-survey-pipeline.vercel.app/",
@@ -72,28 +66,34 @@ export const projects: Project[] = [
     slug: "coming-soon-workflow",
     category: "Workflow Automation",
     comingSoon: true,
-    tags: ["COMING SOON"],
+    tags: ["Coming soon"],
     title: "Next Build",
-    summary: "A recurring manual process, turned into something that runs itself. Check back soon.",
-    metrics: [],
+    goal: "A recurring manual process, turned into something that runs itself.",
+    approach: "",
+    solution: "",
+    impact: [],
   },
   {
     slug: "coming-soon-consulting",
     category: "Consulting Automation",
     comingSoon: true,
-    tags: ["COMING SOON"],
+    tags: ["Coming soon"],
     title: "Next Build",
-    summary: "Market research and go-to-market work, accelerated with AI. Check back soon.",
-    metrics: [],
+    goal: "Market research and go-to-market work, accelerated with AI.",
+    approach: "",
+    solution: "",
+    impact: [],
   },
   {
     slug: "coming-soon-other",
     category: "Other Projects",
     comingSoon: true,
-    tags: ["COMING SOON"],
+    tags: ["Coming soon"],
     title: "Next Build",
-    summary: "Another business problem, solved with the right tool for the job. Check back soon.",
-    metrics: [],
+    goal: "Another business problem, solved with the right tool for the job.",
+    approach: "",
+    solution: "",
+    impact: [],
   },
 ];
 

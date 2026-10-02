@@ -21,7 +21,7 @@ export default function Experience() {
             <div>
               <h3 className="font-display text-lg font-medium">{entry.company}</h3>
               <p className="text-sm text-muted">{entry.companySub}</p>
-              <p className="mt-1 text-xs uppercase tracking-wide text-terracotta">{entry.location}</p>
+              <p className="mt-1 text-xs uppercase tracking-wide text-muted">{entry.location}</p>
             </div>
 
             <div className="flex flex-col gap-6">

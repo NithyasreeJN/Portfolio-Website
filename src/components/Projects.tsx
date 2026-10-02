@@ -5,92 +5,116 @@ import { categories, projects } from "@/data/content";
 
 export default function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
+    <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
       <h2 className="font-display text-3xl font-medium tracking-tight">Projects</h2>
-      <p className="mt-2 max-w-2xl text-muted">
-        Different problems call for different tools. Grouped below by the kind of problem, not
-        just the tech stack, so you can see how I pick the approach, not just that I can build.
+      <p className="mt-3 max-w-xl text-muted">
+        Grouped by the kind of problem solved, not the tech stack, since the judgment on which
+        tool fits is the point.
       </p>
 
-      <div className="mt-14 flex flex-col gap-16">
+      <div className="mt-16 flex flex-col gap-20">
         {categories.map((category) => {
           const categoryProjects = projects.filter((p) => p.category === category);
           if (categoryProjects.length === 0) return null;
 
           return (
             <div key={category}>
-              <h3 className="font-display text-xl font-medium text-accent">{category}</h3>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">
+                {category}
+              </h3>
 
-              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <div className="mt-6 flex flex-col gap-10">
                 {categoryProjects.map((project, i) => (
-                  <motion.div
+                  <motion.article
                     key={project.slug}
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className={`flex flex-col rounded-2xl border border-border bg-surface p-7 ${
-                      categoryProjects.length === 1 ? "sm:col-span-2" : ""
-                    } ${project.comingSoon ? "opacity-60" : ""}`}
+                    transition={{ duration: 0.4, delay: i * 0.06 }}
+                    className={`border-t border-border pt-8 ${project.comingSoon ? "opacity-50" : ""}`}
                   >
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-border px-3 py-1 text-xs font-medium uppercase tracking-wide text-muted"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <h4 className="mt-4 font-display text-xl font-medium">{project.title}</h4>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">{project.summary}</p>
-
-                    {project.metrics.length > 0 && (
-                      <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
-                        {project.metrics.map((metric) => (
-                          <span key={metric} className="text-sm font-semibold text-accent">
-                            {metric}
+                    <div className="flex flex-wrap items-baseline justify-between gap-3">
+                      <h4 className="font-display text-2xl font-medium">{project.title}</h4>
+                      <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted">
+                        {project.tags.map((tag, idx) => (
+                          <span key={tag}>
+                            {tag}
+                            {idx < project.tags.length - 1 && <span className="ml-3">·</span>}
                           </span>
                         ))}
+                      </div>
+                    </div>
+
+                    {project.comingSoon ? (
+                      <p className="mt-4 text-sm leading-relaxed text-muted">{project.goal}</p>
+                    ) : (
+                      <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
+                            Goal
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-muted">{project.goal}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
+                            My Approach
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-muted">{project.approach}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
+                            Solution
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-muted">{project.solution}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
+                            Impact
+                          </p>
+                          <ul className="mt-2 flex flex-col gap-1 text-sm leading-relaxed text-foreground">
+                            {project.impact.map((item) => (
+                              <li key={item} className="font-medium">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     )}
 
                     {!project.comingSoon && (
-                      <div className="mt-6 flex flex-wrap gap-4 text-sm font-medium">
-                        {project.storyHref && (
-                          <a href={project.storyHref} className="text-accent hover:underline">
-                            Read the Story →
-                          </a>
-                        )}
-                        {project.appHref ? (
+                      <div className="mt-6 flex flex-wrap items-center gap-3">
+                        {project.appHref && (
                           <a
                             href={project.appHref}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-muted hover:text-accent"
+                            className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-80"
                           >
-                            View App
+                            View Demo
                           </a>
-                        ) : (
-                          <span className="text-muted/50">View App (coming soon)</span>
                         )}
-                        {project.codeHref ? (
+                        {project.storyHref && (
+                          <a
+                            href={project.storyHref}
+                            className="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-foreground"
+                          >
+                            View Story
+                          </a>
+                        )}
+                        {project.codeHref && (
                           <a
                             href={project.codeHref}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-muted hover:text-accent"
+                            className="text-sm font-medium text-muted underline-offset-4 hover:text-foreground hover:underline"
                           >
-                            Code
+                            Code ↗
                           </a>
-                        ) : (
-                          <span className="text-muted/50">Code (coming soon)</span>
                         )}
                       </div>
                     )}
-                  </motion.div>
+                  </motion.article>
                 ))}
               </div>
             </div>
