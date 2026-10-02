@@ -33,9 +33,18 @@ export const marqueeTags = [
   "BUSINESS ANALYTICS",
 ];
 
+export const categories = [
+  "Sustainability Problems Reimagined",
+  "Workflow Automation",
+  "Consulting Automation",
+  "Other Projects",
+] as const;
+
+export type Category = (typeof categories)[number];
+
 export type Project = {
   slug: string;
-  flagship?: boolean;
+  category: Category;
   tags: string[];
   title: string;
   summary: string;
@@ -49,22 +58,41 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "esg-survey-pipeline",
-    flagship: true,
+    category: "Sustainability Problems Reimagined",
     tags: ["ESG", "NEXT.JS", "SUPABASE", "POWER BI (REAL TRACK)"],
     title: "ESG Survey Pipeline: Two Ways to Solve the Same Problem",
     summary:
-      "During an MBA internship, I manually designed a no-code ESG data pipeline for a 70+ site global rollout: Microsoft Forms to Power Automate to SharePoint Lists, visualized in a six-page Power BI suite. Here, I rebuilt the same workflow logic as a lightweight AI-accelerated web app in an afternoon, a 10-question representative demo, to show I can tell the difference between a problem that needs governed no-code infrastructure and one that needs a fast disposable prototype, and build either one myself.",
+      "My manager's ask was simply \"improve this survey\": I could have patched the existing email-and-spreadsheet process and called it done. Instead I proposed something nobody asked for: a centralized database feeding live Power BI dashboards, replacing a process that couldn't be benchmarked across sites in real time. I designed and manually built that no-code pipeline for a 70+ site global rollout: Microsoft Forms to Power Automate to SharePoint Lists, visualized in a six-page Power BI suite. Here, I rebuilt the same workflow logic as a lightweight AI-accelerated web app in an afternoon, a 10-question representative demo, to show I can tell the difference between a problem that needs governed no-code infrastructure and one that needs a fast disposable prototype, and build either one myself.",
     metrics: ["85%+ On-Time Submission vs ~60% Prior Cycle", "121 Questions Across 70+ Sites (Real Track)"],
     storyHref: "/projects/esg-survey-pipeline",
     codeHref: "https://github.com/NithyasreeJN/esg-survey-pipeline",
     appHref: "https://esg-survey-pipeline.vercel.app/",
   },
   {
-    slug: "coming-soon-1",
+    slug: "coming-soon-workflow",
+    category: "Workflow Automation",
     comingSoon: true,
     tags: ["COMING SOON"],
     title: "Next Build",
-    summary: "Another business problem, solved with AI. Check back soon.",
+    summary: "A recurring manual process, turned into something that runs itself. Check back soon.",
+    metrics: [],
+  },
+  {
+    slug: "coming-soon-consulting",
+    category: "Consulting Automation",
+    comingSoon: true,
+    tags: ["COMING SOON"],
+    title: "Next Build",
+    summary: "Market research and go-to-market work, accelerated with AI. Check back soon.",
+    metrics: [],
+  },
+  {
+    slug: "coming-soon-other",
+    category: "Other Projects",
+    comingSoon: true,
+    tags: ["COMING SOON"],
+    title: "Next Build",
+    summary: "Another business problem, solved with the right tool for the job. Check back soon.",
     metrics: [],
   },
 ];

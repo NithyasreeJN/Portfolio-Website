@@ -21,7 +21,7 @@ export default function EsgCaseStudy() {
           </h1>
 
           <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-terracotta">
-            Flagship Case Study
+            Sustainability Problems Reimagined
           </p>
 
           <section className="mt-10 flex flex-col gap-6 text-base leading-relaxed text-muted">
@@ -33,6 +33,20 @@ export default function EsgCaseStudy() {
                 handling, safety, and certifications. Historically this ran through email and
                 spreadsheets: slow, error prone, and impossible to benchmark across sites in real
                 time.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-display text-xl font-medium text-foreground">
+                The Brief Was Narrow. The Fix Wasn&apos;t.
+              </h2>
+              <p className="mt-2">
+                My manager&apos;s ask was simply &quot;improve this survey.&quot; I could have
+                patched the existing email-and-spreadsheet process, tightened a few templates, and
+                called it done, that would have satisfied the brief. Instead I proposed something
+                nobody asked for: a centralized database feeding live dashboards, so leadership
+                could see compliance signals across sites in real time instead of waiting on a
+                manual rollup. That reframing, not the tooling, was the actual decision.
               </p>
             </div>
 
