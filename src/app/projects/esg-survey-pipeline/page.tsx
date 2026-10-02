@@ -38,15 +38,14 @@ export default function EsgCaseStudy() {
 
             <div>
               <h2 className="font-display text-xl font-medium text-foreground">
-                The Brief Was Narrow. The Fix Wasn&apos;t.
+                Leading the Improvement
               </h2>
               <p className="mt-2">
-                My manager&apos;s ask was simply &quot;improve this survey.&quot; I could have
-                patched the existing email-and-spreadsheet process, tightened a few templates, and
-                called it done, that would have satisfied the brief. Instead I proposed something
-                nobody asked for: a centralized database feeding live dashboards, so leadership
-                could see compliance signals across sites in real time instead of waiting on a
-                manual rollup. That reframing, not the tooling, was the actual decision.
+                The brief was to improve survey completion. I proposed going further: a
+                centralized data pipeline feeding live dashboards, so leadership could see
+                compliance signals across sites in real time instead of waiting on a manual
+                rollup. That reframing, from a template fix to a data infrastructure decision, is
+                what shaped the rest of the project.
               </p>
             </div>
 
@@ -75,9 +74,9 @@ export default function EsgCaseStudy() {
               <p className="mt-2">
                 The same workflow logic, rebuilt as a small AI-accelerated web app in an afternoon:
                 a 10-question representative demo instead of the full 121, because full replication
-                was never the point. The point is that when the situation calls for a fast,
-                disposable prototype instead of a governed rollout, I can build that myself with AI,
-                without waiting on an engineer.
+                was never the point. This track shows the other half of the same judgment call,
+                recognizing when a fast, disposable prototype is the right fit instead of a
+                governed rollout, and building it quickly with AI.
               </p>
             </div>
 
@@ -110,10 +109,10 @@ export default function EsgCaseStudy() {
             <div>
               <h2 className="font-display text-xl font-medium text-foreground">The Takeaway</h2>
               <p className="mt-2">
-                Knowing which tool fits which situation, and being able to execute either one. A
-                no-code enterprise stack and an AI-built prototype solve different problems.
-                Recognizing that, and having done both, is the skill on display here, not the tech
-                stack itself.
+                A governed no-code enterprise stack and an AI-built prototype solve different
+                problems. The real work was matching the tool to the situation, a 70+ site
+                rollout needed one, a fast representative demo needed the other, and being able
+                to build either one.
               </p>
             </div>
 

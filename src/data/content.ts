@@ -52,11 +52,11 @@ export const projects: Project[] = [
     category: "Sustainability Problems Reimagined",
     tags: ["ESG", "Next.js", "Supabase", "Power BI (real track)"],
     title: "ESG Survey Pipeline: Two Ways to Solve the Same Problem",
-    goal: "My manager's ask was simply \"improve this survey.\" I reframed it: give leadership real-time visibility into ESG compliance across every site, not just a tidier spreadsheet.",
+    goal: "Leading improvements to the ESG sustainability survey for a 70+ site global manufacturing rollout.",
     approach:
-      "No-code vs. build judgment. A governed 70+ site rollout with non-technical maintainers needs enterprise infrastructure that fits existing IT governance, not a custom app. I proposed a centralized database feeding live dashboards, a decision nobody asked for, and built it myself.",
+      "The brief was to improve survey completion. I proposed going further: a centralized data pipeline feeding live dashboards, so leadership could see compliance signals across sites in real time instead of waiting on a manual rollup. That meant weighing whether a governed no-code enterprise stack or a custom build fit the multi-site, non-technical-maintainer context better.",
     solution:
-      "Designed and manually built a no-code pipeline (Microsoft Forms to Power Automate to SharePoint Lists) visualized in a six-page Power BI suite, 121 questions across 3 parts. Rebuilt the same workflow logic here as a 10-question AI-accelerated demo in an afternoon, to show both the governed build and the fast prototype.",
+      "Designed and built a no-code pipeline (Microsoft Forms to Power Automate to SharePoint Lists) visualized in a six-page Power BI suite, covering 121 questions across 3 survey parts. This demo rebuilds the same workflow logic as a lightweight, 10-question AI-accelerated prototype.",
     impact: ["85%+ on-time submission, up from ~60% the prior cycle", "121 questions standardized across 70+ sites"],
     storyHref: "/projects/esg-survey-pipeline",
     codeHref: "https://github.com/NithyasreeJN/esg-survey-pipeline",
