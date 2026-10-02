@@ -48,37 +48,34 @@ export default function Projects() {
                     {project.comingSoon ? (
                       <p className="mt-4 text-sm leading-relaxed text-muted">{project.goal}</p>
                     ) : (
-                      <div className="mt-6 grid gap-6 sm:grid-cols-2">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
-                            Goal
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-muted">{project.goal}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
-                            My Approach
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-muted">{project.approach}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
-                            Solution
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-muted">{project.solution}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
-                            Impact
-                          </p>
-                          <ul className="mt-2 flex flex-col gap-1 text-sm leading-relaxed text-foreground">
-                            {project.impact.map((item) => (
-                              <li key={item} className="font-medium">
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                      <div className="mt-6 flex flex-col">
+                        {[
+                          { label: "Goal", body: <p>{project.goal}</p> },
+                          { label: "My Approach", body: <p>{project.approach}</p> },
+                          { label: "Solution", body: <p>{project.solution}</p> },
+                          {
+                            label: "Impact",
+                            body: (
+                              <ul className="flex flex-col gap-1">
+                                {project.impact.map((item) => (
+                                  <li key={item} className="font-medium text-foreground">
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            ),
+                          },
+                        ].map((row) => (
+                          <div
+                            key={row.label}
+                            className="grid grid-cols-1 gap-2 border-b border-border py-5 first:pt-0 last:border-none sm:grid-cols-[140px_1fr] sm:gap-8"
+                          >
+                            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent">
+                              {row.label}
+                            </p>
+                            <div className="max-w-2xl text-sm leading-relaxed text-muted">{row.body}</div>
+                          </div>
+                        ))}
                       </div>
                     )}
 
