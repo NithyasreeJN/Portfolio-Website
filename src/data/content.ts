@@ -53,10 +53,10 @@ export const projects: Project[] = [
     tags: ["ESG", "NEXT.JS", "SUPABASE", "POWER BI (REAL TRACK)"],
     title: "ESG Survey Pipeline: Two Ways to Solve the Same Problem",
     summary:
-      "During my Solenis MBA internship, I manually designed a no-code ESG data pipeline for a 70+ site global rollout: Microsoft Forms to Power Automate to SharePoint Lists, visualized in a six-page Power BI suite. Here, I rebuilt the same workflow logic as a lightweight AI-accelerated web app in an afternoon, a 10-question representative demo, to show I can tell the difference between a problem that needs governed no-code infrastructure and one that needs a fast disposable prototype, and build either one myself.",
+      "During an MBA internship, I manually designed a no-code ESG data pipeline for a 70+ site global rollout: Microsoft Forms to Power Automate to SharePoint Lists, visualized in a six-page Power BI suite. Here, I rebuilt the same workflow logic as a lightweight AI-accelerated web app in an afternoon, a 10-question representative demo, to show I can tell the difference between a problem that needs governed no-code infrastructure and one that needs a fast disposable prototype, and build either one myself.",
     metrics: ["85%+ On-Time Submission vs ~60% Prior Cycle", "121 Questions Across 70+ Sites (Real Track)"],
     storyHref: "/projects/esg-survey-pipeline",
-    codeHref: "", // EDIT ME: add the GitHub repo link once it's public
+    codeHref: "https://github.com/NithyasreeJN/esg-survey-pipeline",
     appHref: "https://esg-survey-pipeline.vercel.app/",
   },
   {
